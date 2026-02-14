@@ -84,7 +84,11 @@ public class DIContainer: @unchecked Sendable {
     }
 
     @discardableResult
-    public static func singleton<T>(_ type: T.Type, name: String? = nil, factory: @escaping (DIContainer) -> T) -> DIContainer {
+    public static func singleton<T>(
+        _ type: T.Type,
+        name: String? = nil,
+        factory: @escaping (DIContainer) -> T
+    ) -> DIContainer {
         `default`.singleton(type, name: name, factory: factory)
     }
 
@@ -94,7 +98,11 @@ public class DIContainer: @unchecked Sendable {
     }
 
     @discardableResult
-    public static func transient<T>(_ type: T.Type, name: String? = nil, factory: @escaping (DIContainer) -> T) -> DIContainer {
+    public static func transient<T>(
+        _ type: T.Type,
+        name: String? = nil,
+        factory: @escaping (DIContainer) -> T
+    ) -> DIContainer {
         `default`.transient(type, name: name, factory: factory)
     }
 
@@ -240,9 +248,9 @@ public protocol Injectable {
     init(dependencies: Dependencies)
 }
 
-public extension DIContainer {
+extension DIContainer {
     @discardableResult
-    func register<T: Injectable>(
+    public func register<T: Injectable>(
         _ type: T.Type,
         lifetime: ServiceLifetime = .transient
     ) -> Self where T.Dependencies == DIContainer {

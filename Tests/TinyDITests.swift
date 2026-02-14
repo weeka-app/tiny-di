@@ -613,7 +613,7 @@ struct PerformanceTests {
         let endTime = Date()
 
         let duration = endTime.timeIntervalSince(startTime)
-        #expect(duration < 1.0) // Should complete in less than 1 second
+        #expect(duration < 1.0)  // Should complete in less than 1 second
     }
 
     @Test("Performance of transient resolution")
@@ -627,7 +627,7 @@ struct PerformanceTests {
         let endTime = Date()
 
         let duration = endTime.timeIntervalSince(startTime)
-        #expect(duration < 2.0) // Should complete in less than 2 seconds
+        #expect(duration < 2.0)  // Should complete in less than 2 seconds
     }
 
     @Test("Performance with many registered services")
@@ -643,7 +643,6 @@ struct PerformanceTests {
         let endTime = Date()
 
         let duration = endTime.timeIntervalSince(startTime)
-        #expect(duration < 1.0) // Should complete in less than 1 second
+        #expect(duration < 1.0)  // Should complete in less than 1 second
     }
 }
-

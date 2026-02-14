@@ -5,7 +5,9 @@ import PackageDescription
 let package = Package(
     name: "TinyDI",
     platforms: [
-        .iOS("13.0"), .tvOS("13.0")
+        .iOS("13.0"),
+        .tvOS("13.0"),
+        .macOS("10.15"),
     ],
     products: [
         .library(
@@ -22,6 +24,6 @@ let package = Package(
             name: "TinyDITests",
             dependencies: ["TinyDI"],
             path: "Tests"
-        )
+        ),
     ]
 )
